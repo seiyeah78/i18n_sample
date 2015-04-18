@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150411123502) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "user_translations", force: true do |t|
     t.integer  "user_id",     null: false
     t.string   "locale",      null: false
@@ -22,8 +25,8 @@ ActiveRecord::Schema.define(version: 20150411123502) do
     t.string   "description"
   end
 
-  add_index "user_translations", ["locale"], name: "index_user_translations_on_locale"
-  add_index "user_translations", ["user_id"], name: "index_user_translations_on_user_id"
+  add_index "user_translations", ["locale"], name: "index_user_translations_on_locale", using: :btree
+  add_index "user_translations", ["user_id"], name: "index_user_translations_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.integer  "age"

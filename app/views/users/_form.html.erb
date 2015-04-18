@@ -11,13 +11,6 @@
     </div>
   <% end %>
 
-  <%= form_for(@user) do |f| %>
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </div>
-  <% end %>
-
   <% I18n.available_locales.each do |locale| %>
     <div class="field">
       <%= f.label :"name_#{locale}" %><br>
