@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= User.human_attribute_name(:name) %>:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:age) %>:</strong>
+  <%= @user.age %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:weight) %>:</strong>
+  <%= @user.weight %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:description) %>:</strong>
+  <%= @user.description %>
+</p>
+
+<%= link_to t('.edit'), edit_user_path(@user) %> |
+<%= link_to t('.back'), users_path %>
